@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Busca Sequencial</title>
+    </head>
+
+    <body>
+        <h1>Busca Sequencial</h1>
+        <button onclick="buscaSequencial(20)">Executar</button>
+
+        <script>
+            function buscaSequencial(buscado) {
+                // Criando um array vazio e preenchendo-o com 100 elementos
+                let vetor = [];
+                for (let i = 0; i < 100; i++) {
+                    // A função Math.random() gera números entre 0 e 1. Para gerar um número entre 0 e 99, multiplicamos o resultado por 100 e utilizamos Math.floor() para arredondar para baixo.
+                    vetor[i] = Math.floor(Math.random() * 100);
+                }
+                var i;
+                var encontrado = false;
+                var posicao;
+                for (i = 0; i < vetor.length; i++) {
+                    if (vetor[i] === buscado) {
+                        encontrado = true;
+                        posicao = i;
+                        break;
+                    }
+                }
+                if (encontrado === true) {
+                    alert("O vetor criado é: " + vetor + "\n\nApós " + i + " comparações, o numero " + buscado + " foi encontrado na posição " + posicao);
+                } else {
+                    alert("O vetor criado é: " + vetor + " e o numero " + buscado + " não existe!");
+                }
+            }
+        </script>
+    </body>
+
+</html>
